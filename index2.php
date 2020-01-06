@@ -51,7 +51,7 @@
                          
                             <li><a href="cart.php"><i class="fa fa-user"></i>Giỏ hàng</a></li>
                             <li><a href="checkout.php"><i class="fa fa-user"></i> Kiểm tra</a></li>
-                           
+                           klfkldsnbjkdbhfldklfnkndls
                         </ul>
                     </div>
                 </div>
