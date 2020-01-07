@@ -58,7 +58,7 @@
                     <?php echo $row->{"price2"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
-                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>">
+                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>.jpg">
                     </td> 
                     <td class="project-state text-left" style="
                     max-width:300px;
