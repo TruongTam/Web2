@@ -7,11 +7,11 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-
+  <base href="/Web2/">
   <link rel="stylesheet" href="">
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="./plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -22,13 +22,16 @@
   <link rel="stylesheet" href="./dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="./plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <script src="./jquery.js"></script>
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="./plugins/daterangepicker/daterangepicker.css">
+  
   <!-- summernote -->
   <link rel="stylesheet" href="./plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <script src= "./js/productAdmin.js"></script>
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -155,102 +158,11 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Quản lý thành viên</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="card-body p-0">
-        <table class="table table-striped projects" style="width:100%">
-            <thead>
-                <tr>
-                    <th style="width: 1%">
-                        STT
-                    </th>
-                    <th style="width: 20%">
-                       Tên sản phẩm
-                    </th>
-                    <th style="width: 15%" class="text-center">
-                       Tiền chưa giảm giá 
-                    </th>
-                    <th style="width: 15%" class="text-center">
-                        Tiền đã giảm giá
-                    </th>
-                    <th style="width: 10%" class="text-center">
-                        Hình ảnh 
-                    </th>
-                    <th style="width:24%">
-                        Mô tả
-                    </th>
-                    <th style="width: 15% " class="text-right">
-                      Action
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-              <?php while($row = mysqli_fetch_array($data["data"])){
-              ?>
-                <tr>
-                    <td style="width: 1%">
-                    <?php echo $row["id"] ?>
-                    </td>
-                    <td style="width: 20%" >
-                        <?php echo $row["name"] ?>
-                    </td>
-                    <td style="width: 10%" class="text-center">
-                      <?php echo $row["price"] ?>
-                    </td> 
-                    <td style="width: 10%"class="text-center">
-                    <?php echo $row["price2"] ?>
-                    </td>
-                    <td style="width: 10%" class="text-center">
-                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row["image"]?>">
-                    </td> 
-                    <td class="project-state text-left" style="
-                    max-width:300px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;  
-                    "> <?php echo $row["description"] ?></td>
-                       
-                    </td>
-                    <td class="project-actions text-right"style="width: 15% ">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            Xem
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Sửa
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Xóa
-                        </a>
-                    </td>
-                </tr>
 
-              <?php } ?>
-                
-            </tbody>
-        </table>
-      </div>  
-    </section>
-    <!-- /.content -->
-  </div>
+    <?php require_once "pages/".$data["page"].".php"  ?>
+
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>

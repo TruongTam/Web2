@@ -1,7 +1,7 @@
 <?php 
 
 class App{
-    protected $controller="product_admin";
+    protected $controller="ProductAdmin";
     protected $action="Show";
     protected $params=[];
     function __construct(){
@@ -13,7 +13,7 @@ class App{
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        require_once "./mvc/controllers/". $this->controller .".php";
+        require_once "./mvc/controllers/". $this->controller.".php";
         $this->controller = new $this->controller;
         // Action
         if(isset($arr[1])){
@@ -24,6 +24,7 @@ class App{
         }
         // Params
         $this->params = $arr?array_values($arr):[];
+        
         call_user_func_array([$this->controller, $this->action], $this->params );
     }
     function UrlProcess(){
