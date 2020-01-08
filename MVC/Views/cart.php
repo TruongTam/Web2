@@ -1,13 +1,6 @@
 <?php
 include("./connect.php");
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
 ?>
-<<<<<<< HEAD:MVC/Views/Pages/cart.php
-<script src="1.js"></script>
-            <div class="col-md-8">
-=======
 <!DOCTYPE html>
 <!--
 	ustora by freshdesignweb.com
@@ -20,7 +13,7 @@ if (isset($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cart Page - Ustora Demo</title>
-    
+    <base href="/web2/">
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
@@ -33,9 +26,9 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="css/font-awesome.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="./css/owl.carousel.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -50,7 +43,7 @@ if (isset($_GET['id'])) {
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="1.js"></script>
+    <script src="./1.js"></script>
   </head>
   
   <body>
@@ -138,15 +131,15 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td>SĐT:</td>
-                        <td><input type="text" name="sdt"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
                     <tr>
                         <td>Ngày sinh:</td>
-                        <td><input type="text" name="ngaysinh"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ:</td>
-                        <td><input type="text" name="diachi"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
 
                     <tr>
@@ -154,7 +147,7 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" value="Đăng Ký" name="nutdangky"></td>
+                        <td><input type="submit" value="Đăng Ký" name="edit_user"></td>
                     </tr>
             </table>
         </form>
@@ -305,10 +298,9 @@ if (isset($_GET['id'])) {
                 </div>
                 
                 <div class="col-md-8">
->>>>>>> 71678eb17fd38047d982de670683646759a4b794:cart.php
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="./iCheckout">
+                            <form method="post" action="checkout.php">
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead id="giohang1">
                                         <tr>
@@ -664,3 +656,104 @@ if (isset($_GET['id'])) {
                         </div>                        
                     </div>                    
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>u<span>Stora</span></h2>
+                        <p>Xưởng Thượng Tín với việc nằm ở TPHCM là điều hết sức thuận lợi cho khách hàng. Bạn có thể đến trực tiếp tại xưởng để bàn bạc và kiểm tra chất liệu vải, mẫu.Với kinh nghiệm lâu năm trong nghề. Chúng tôi sẽ mang đến cho bạn những chiếc áo khoác quảng cáo có giá tốt nhất.</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                    <h2 class="footer-wid-title" style="font-weight: bold;">Điều hướng người dùng </h2>
+                        <ul>
+                            <li><a href="">Tài khoản người dùng</a></li>
+                            <li><a href="">Lịch sử đặt hàng</a></li>
+                            <li><a href="">Danh sách </a></li>
+                            <li><a href="">Liên hệ nhà sản xuất</a></li>
+                            <li><a href="">Trang chủ</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                    <h2 class="footer-wid-title">Phân loại</h2>
+                        <ul>
+                            <li><a href="">Áo khoác</a></li>
+                            <li><a href="">Áo thun</a></li>
+                            <li><a href="">Giày</a></li>
+                           
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Người mới</h2>
+                        <p>Đăng ký để nhận thông báo mới nhất !!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Nhập gmail">
+                                <input type="submit" value="Đăng ký">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>&copy; 2015 Thương mại điện tử . Đăng ký bản quyền. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer bottom area -->
+   
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery sticky menu -->
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    
+    <!-- jQuery easing -->
+    <script src="./js/jquery.easing.1.3.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

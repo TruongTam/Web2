@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Thêm sản phẩm</h1>
+            <h1>Cập nhật sản phẩm</h1>
           </div>
           <div class="col-sm-6">
             <h1><?php echo $data['result']?></h1>
@@ -32,26 +32,26 @@
             </div>
             <div class="col-12 col-sm-6">
               
-            <form role="form" action="./ProductAdmin/addProduct" method = "post" enctype="multipart/form-data"> 
+            <form role="form" action="./ProductAdmin/updateProduct/<?php echo $data['data']->id?>" method = "post" enctype="multipart/form-data"> 
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tên sản phẩm</label>
-                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên sản phẩm">
+                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên sản phẩm" value="<?php echo $data['data']->name?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tiền chưa giảm giá</label>
-                  <input type="text" class="form-control" name = "price"  placeholder="Nhập giá tiền">
+                  <input type="text" class="form-control" name = "price"  placeholder="Nhập giá tiền" value="<?php echo $data['data']->price?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tiền đã giảm giá</label>
-                  <input type="text" class="form-control" name="price2"  placeholder="Nhập giá tiền">
+                  <input type="text" class="form-control" name="price2"  placeholder="Nhập giá tiền" value="<?php echo $data['data']->price2?>">
                 </div>
                 
                 <div class="form-group">
                   <label for="exampleInputFile">Hình ảnh</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+                      <input type="file" class="custom-file-input" name="image" id="exampleInputFile" value= "<?php echo $data['data']->image.'.jpg'?>">
                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                     <div class="input-group-append">
@@ -61,14 +61,14 @@
                 </div>
                 <div class="form-group">
                   <label>Mô tả sản phẩm</label>
-                  <textarea class="form-control" rows="3" name="description" placeholder="Enter ..."></textarea>
+                  <textarea class="form-control" rows="3" name="description" placeholder="Enter ..."><?php echo $data['data']->description?></textarea>
                 </div>
               </div>
               
               <!-- /.card-body -->
 
               <div class="card-footer">
-                <button type="submit" name ="submit" class="btn btn-primary">Thêm sản phẩm</button>
+                <button type="submit" name ="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
               </div>
             </form>
             </div>

@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 class App{
     protected $controller="ProductAdmin";
     protected $action="Show";
@@ -9,11 +8,12 @@ class App{
         $arr = $this->UrlProcess();
  
         // Controller
-        if( file_exists("./mvc/controllers/".$arr[0].".php") ){
+        if( file_exists("./MVC/Controllers/".$arr[0].".php") ){
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        require_once "./mvc/controllers/". $this->controller.".php";
+        unset($arr[0]);
+        require_once "./mvc/controllers/". $this->controller .".php";
         $this->controller = new $this->controller;
         // Action
         if(isset($arr[1])){
@@ -24,8 +24,7 @@ class App{
         }
         // Params
         $this->params = $arr?array_values($arr):[];
-       
-       
+  
         call_user_func_array([$this->controller, $this->action], $this->params );
     }
     function UrlProcess(){
@@ -35,8 +34,3 @@ class App{
     }
 }
 ?>
-
-
-
-
-
