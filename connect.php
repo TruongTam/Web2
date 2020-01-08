@@ -6,7 +6,5 @@
 
     $conn = mysqli_connect($servername, $username, $password,$database) or die("lỗi");
 
-    mysqli_set_charset($conn, 'UTF8');   
-    
-
+    mysqli_set_charset($conn, 'UTF8');
 ?>

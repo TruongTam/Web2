@@ -48,7 +48,7 @@
   var restoreDefaultText = function restoreDefaultText(input) {
     var defaultText = input.bsCustomFileInput.defaultText;
     var label = input.parentNode.querySelector(Selector.CUSTOMFILELABEL);
-
+    
     if (label) {
       var element = findFirstChildNode(label);
       element.innerHTML = defaultText;
@@ -74,9 +74,9 @@
     return input.value;
   };
 
-  function handleInputChange() {
+  function handleInputChange(callback) {
     var label = this.parentNode.querySelector(Selector.CUSTOMFILELABEL);
-
+    console.log(label);
     if (label) {
       var element = findFirstChildNode(label);
       var inputValue = getSelectedFiles(this);
@@ -87,6 +87,10 @@
         restoreDefaultText(this);
       }
     }
+    if(callback) {
+      callback();
+    }
+    
   }
 
   function handleFormReset() {
@@ -105,11 +109,10 @@
     INPUTCHANGE: 'change'
   };
   var bsCustomFileInput = {
-    init: function init(inputSelector, formSelector) {
+    init: function init(callback, inputSelector, formSelector) {
       if (inputSelector === void 0) {
         inputSelector = Selector.CUSTOMFILE;
       }
-
       if (formSelector === void 0) {
         formSelector = Selector.FORM;
       }
@@ -126,7 +129,7 @@
           writable: true
         });
         handleInputChange.call(input);
-        input.addEventListener(Event.INPUTCHANGE, handleInputChange);
+        input.addEventListener(Event.INPUTCHANGE, () => handleInputChange.bind(input)(callback) );
       }
 
       for (var _i = 0, _len = formList.length; _i < _len; _i++) {

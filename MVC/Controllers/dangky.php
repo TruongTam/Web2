@@ -2,7 +2,7 @@
 
 class dangky extends  Controller
 {
-    function dangky()
+    function Show()
     {
         $coc = $this->model("AccountModel"); // sử dụng hàm
         $this->view("cart"); // require_once

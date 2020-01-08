@@ -23,6 +23,7 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="./plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <script src="./jquery.js"></script>
+  <link rel="stylesheet" href="./style.css">
   <!-- Daterange picker -->
   
   <!-- summernote -->
@@ -30,6 +31,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <script src= "./js/productAdmin.js"></script>
+  <script src="jquery.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -94,7 +96,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./ProductAdmin/addProduct" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm sản phẩm</p>
                 </a>
@@ -158,7 +160,16 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<!-- Bootstrap 4 -->
+<script src="./plugins/bs-custom-file-input/bs-custom-file-input.js"></script>
+
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./dist/js/demo.js"></script>
 
     <?php require_once "pages/".$data["page"].".php"  ?>
 
@@ -180,12 +191,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="./plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="./dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="./dist/js/demo.js"></script>
+
 </body>
 </html>

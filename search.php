@@ -1,6 +1,5 @@
 
 <?php
-    include("connect.php");
     $name = $_GET["name"];
     $qr = "SELECT * FROM sanpham WHERE name like '%$name%' LIMIT 0,5 ";
     $result = mysqli_query($conn, $qr);

@@ -8,5 +8,6 @@ class Controller{
         require_once "./MVC/Views/".$view.".php";
         
     }
+   
 }
 ?>
