@@ -41,6 +41,7 @@ class dangky extends  Controller
             {
                 $coc->capnhatmatkhau($taikhoan,$matkhau,$matkhaunew);
                 $_POST['taikhoan2']=null;
+                echo "maxba1";
             }
         }
         
