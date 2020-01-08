@@ -27,13 +27,15 @@
         public function dangnhap($taikhoan,$matkhau)
         {
             $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau'";
-            if(mysqli_query($this->con,$sql )!=null)
+            
+            if(mysqli_num_rows(mysqli_query($this->con,$sql ))>0)
             {
-                echo "Chào mừng bạn  $taikhoan";
+                echo "Chào mừng bạn + $taikhoan";
             }
-            else{
-                echo "ngu";
-            }
+            else
+            {
+                echo"ngu";
+            }       
         }
         public function capnhatmatkhau($taikhoan,$matkhau,$matkhaunew)
         {

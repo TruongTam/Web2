@@ -201,7 +201,7 @@ include("./connect.php");
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" value="Đăng nhập" name="nutsua1"></td>
+                        <td><input type="submit" value="Cập nhật" name="nutsua1"></td>
                     </tr>
             </table>
         </form>
