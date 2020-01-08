@@ -1148,3 +1148,15 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   #contact{
     display: flex;
   }
+  #modesearch{
+    position:absolute;
+    top:80px; 
+    left:1000px; 
+    font-size:20px
+  }
+.overflowhide{
+    max-width:300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}

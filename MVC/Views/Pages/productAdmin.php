@@ -2,10 +2,18 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row mb-3">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Quản lý thành viên</h1>
+            <h1 class="m-0 text-dark">Quản lý sản phẩm</h1>
           </div><!-- /.col -->
+          <div id= "modesearch" ></div>
+          <div class="col-sm-6 ">
+            <form action="./Ajax/searchName" style="padding-left: 400px;" method = "post">
+                  <input id="ipSearch" name= "name" type="text" placeholder="Tìm kiếm sản phẩm">
+                  <input type="submit" id="Ssubmit" value="Tìm kiếm ">
+            </form>
+          </div><!-- /.col -->
+          
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -23,16 +31,16 @@
                     <th style="width: 20%">
                        Tên sản phẩm
                     </th>
-                    <th style="width: 15%" class="text-center">
+                    <th style="width: 10%" class="text-center">
                        Tiền chưa giảm giá 
                     </th>
-                    <th style="width: 15%" class="text-center">
+                    <th style="width: 10%" class="text-center">
                         Tiền đã giảm giá
                     </th>
                     <th style="width: 10%" class="text-center">
                         Hình ảnh 
                     </th>
-                    <th style="width:24%">
+                    <th style="width:24%" class="text-center">
                         Mô tả
                     </th>
                     <th style="width: 15% " class="text-right">
@@ -40,7 +48,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id ="tbodysp">
               <?php foreach($data["data"] as $row) {
                
               ?>
@@ -48,7 +56,7 @@
                     <td style="width: 1%">
                     <?php echo $row->{"id"} ?>
                     </td>
-                    <td style="width: 20%" >
+                    <td style="width: 20%" class="overflowhide" >
                         <?php echo $row->{"name"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
@@ -60,12 +68,8 @@
                     <td style="width: 10%" class="text-center">
                       <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>">
                     </td> 
-                    <td class="project-state text-left" style="
-                    max-width:300px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;  
-                    "> <?php echo $row->{"description"} ?></td>
+                    <td class="project-state text-left overflowhide">
+                     <?php echo $row->{"description"} ?></td>
                        
                     </td>
                     <td class="project-actions text-right"style="width: 15% ">
@@ -86,14 +90,29 @@
                         </a>
                     </td>
                 </tr>
-              
               <?php } ?>
-              <tr>
-                <form action="./MVC/Controllers/AdminContrller" method = "post">
-                  <input id="ipSearch" name= "coc" type="text" placeholder="Tìm kiếm sản phẩm">
-                  <input type="submit" id="Ssubmit" value="Tìm kiếm ">
-
-                </form>
+                <tr>
+                <td Colspan="7">
+                <div >
+                    <nav style="display: flex;justify-content: center">
+                        <ul class="pagination">
+                            <li style="padding-right:7px">
+                                <a href="./ProductAdmin/Show/<?php echo $data["pages"]-1?>" aria-label="Previous">
+                                    <span aria-hidden="true"><<</span>
+                                </a>
+                            </li>
+                                <li><a href=""> </a><?php echo $data["pages"]?></li>
+                            <li style="padding-left:7px">
+                                <a href="./ProductAdmin/Show/<?php echo $data["pages"]+1?>" aria-label="Next">
+                                    <span aria-hidden="true">  >></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                  </div>
+                </td>
+               
+                
                 </tr>
             </tbody>
         </table>
