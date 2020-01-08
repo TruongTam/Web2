@@ -19,7 +19,7 @@
         }
         public function dangky($taikhoan,$matkhau,$ten,$sdt,$ngaysinh,$diachi)
         {
-            $sql = "INSERT INTO account(id,taikhoan,password,MAKH,QUYEN,ten,sdt,ngaysinh,diachi) VALUES(null,'$taikhoan','$matkhau','$taikhoan+2020','0','$ten','$sdt','$ngaysinh','$diachi')";
+            $sql = "INSERT INTO account (id,taikhoan,password,MAKH,QUYEN,ten,sdt,ngaysinh,diachi) VALUES (null,'$taikhoan','$matkhau','$taikhoan+2020','0','$ten','$sdt','$ngaysinh','$diachi')";
             
         }
         public function dangnhap($taikhoan,$matkhau)

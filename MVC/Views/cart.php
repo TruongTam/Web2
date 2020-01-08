@@ -131,15 +131,15 @@ include("./connect.php");
                     </tr>
                     <tr>
                         <td>SĐT:</td>
-                        <td><input type="text" name="sdt"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
                     <tr>
                         <td>Ngày sinh:</td>
-                        <td><input type="text" name="ngaysinh"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ:</td>
-                        <td><input type="text" name="diachi"></td>
+                        <td><input type="text" name="ten"></td>
                     </tr>
 
                     <tr>
@@ -147,7 +147,7 @@ include("./connect.php");
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" value="Đăng Ký" name="nutdangky"></td>
+                        <td><input type="submit" value="Đăng Ký" name="edit_user"></td>
                     </tr>
             </table>
         </form>
