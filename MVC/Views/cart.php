@@ -85,7 +85,7 @@ include("./connect.php");
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" value="Đăng nhập" name="nutdangnhap"></td>
+                        <td><input type="submit" value="Đăng nhập" name="nutdangnhap1"></td>
                     </tr>
             </table>
         </form>
@@ -147,7 +147,61 @@ include("./connect.php");
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="submit" value="Đăng Ký" name="nutdangky"></td>
+                        <td><input type="submit" value="Đăng Ký" name="nutdangky1"></td>
+                    </tr>
+            </table>
+        </form>
+    </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
+    Cập nhật
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle2">Cập nhật</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-align:right ">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="dangkytaikhoan">
+        
+        <form action="" method="POST" style="text-align: center">
+            <table>
+                    <tr>
+                        <td>Tài khoản:</td>
+                        <td><input type="text" name="taikhoan2"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                          &nbsp;
+                      </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Mật khẩu:</td>
+                        <td><input type="text" name="matkhau2"></td>
+                    </tr>
+                    <tr>
+                        <td>Mật khẩu mới:</td>
+                        <td><input type="text" name="matkhaunew"></td>
+                    </tr>
+                    <tr>
+                      <td>  &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Đăng nhập" name="nutsua1"></td>
                     </tr>
             </table>
         </form>
@@ -159,6 +213,24 @@ include("./connect.php");
       </div>
     </div>
   </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- shop -->
     <div class="header-area">
         <div class="container">
             <div class="row">

@@ -17,18 +17,28 @@
                
             }
         }
+    
         public function dangky($taikhoan,$matkhau,$ten,$sdt,$ngaysinh,$diachi)
         {
             $sql = "INSERT INTO account (id,taikhoan,password,MAKH,QUYEN,ten,sdt,ngaysinh,diachi) VALUES (null,'$taikhoan','$matkhau','$taikhoan+2020','0','$ten','$sdt','$ngaysinh','$diachi')";
-            mysqli_query($this->con, $sql );
+            mysqli_query($this->con,$sql );
+            
         }
         public function dangnhap($taikhoan,$matkhau)
         {
-            $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan' AND matkhau='$matkhau'";
-            if($sql!=null)
+            $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+            if(mysqli_query($this->con,$sql )!=null)
             {
-                echo "đăng  nhập thành công";
+                echo "Chào mừng bạn  $taikhoan";
             }
+            else{
+                echo "ngu";
+            }
+        }
+        public function capnhatmatkhau($taikhoan,$matkhau,$matkhaunew)
+        {
+            $sql = "UPDATE account SET password='$matkhaunew' WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+            mysqli_query($this->con,$sql );
         }
 
     }
