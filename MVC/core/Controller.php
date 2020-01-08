@@ -5,7 +5,7 @@ class Controller{
         return new $model;
     }
     public function view($view, $data=[]){
-        require_once "./MVC/Views/".$view.".php";
+        require_once "./MVC/Views/Pages/".$view.".php";
         
     }
    
