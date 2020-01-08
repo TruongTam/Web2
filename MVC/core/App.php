@@ -1,6 +1,6 @@
 <?php
 class App{
-    protected $controller="ProductAdmin";
+    protected $controller="dangky";
     protected $action="Show";
     protected $params=[];
     function __construct(){
