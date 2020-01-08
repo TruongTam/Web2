@@ -7,8 +7,8 @@ class dangky extends  Controller
         $coc = $this->model("AccountModel"); // sử dụng hàm
         
 
-        $coc1=$this->view("cart");
-        if(isset($_POST['nutdangky']))
+        $coc1=$this->view("cart"); // require_once
+        if(isset($_POST['nutdangky'])) // lấy dữ liệu từ view
         {
             $taikhoan =$_POST['taikhoan1'];
             $matkhau =$_POST['matkhau1'];
