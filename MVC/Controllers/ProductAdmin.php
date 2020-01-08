@@ -73,9 +73,7 @@ class ProductAdmin extends Controller{
          
         }
     }
-    function insertProduct(){
-      
-    }
+   
     
 
 
