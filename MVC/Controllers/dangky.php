@@ -10,6 +10,7 @@ class dangky extends  Controller
         {
             $taikhoan =$_POST['taikhoan1'];
             $matkhau =$_POST['matkhau1'];
+            
             $ten =$_POST['ten'];
             $sdt = $_POST['sdt'];
             $ngaysinh=$_POST['ngaysinh'];
@@ -17,7 +18,8 @@ class dangky extends  Controller
             
             if($taikhoan!=null)
             {
-                $coc->dangky($taikhoan,$matkhau, $ten, $sdt, $ngaysinh,$diachi);
+                $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi);
+                // insert đoạn đã má hóa vào database
                 $_POST['taikhoan1']=null;
                 echo " đăng ký thành công";
             }    
@@ -28,7 +30,9 @@ class dangky extends  Controller
             $matkhau =$_POST['matkhau'];
             if($taikhoan!=null) // tránh load lại trang
             {
-                $coc->dangnhap( $taikhoan,$matkhau);
+                //mã hóa input xong r bỏ vô hàm đăng nhập cho nó xét vs database
+                $coc->dangnhap( $taikhoan,md5($matkhau,false));
+                
                 $_POST['taikhoan']=null;
             }
         }

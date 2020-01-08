@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td>Mật khẩu:</td>
-                        <td><input type="text" name="matkhau"></td>
+                        <td><input type="password" name="matkhau"></td>
                     </tr>
                     <tr>
                       <td>  &nbsp;</td>
@@ -193,11 +193,11 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td>Mật khẩu:</td>
-                        <td><input type="text" name="matkhau2"></td>
+                        <td><input type="password" name="matkhau2"></td>
                     </tr>
                     <tr>
                         <td>Mật khẩu mới:</td>
-                        <td><input type="text" name="matkhaunew"></td>
+                        <td><input type="password" name="matkhaunew"></td>
                     </tr>
                     <tr>
                       <td>  &nbsp;</td>
