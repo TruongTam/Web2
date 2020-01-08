@@ -34,9 +34,7 @@ class ProductAdmin extends Controller{
             $tmp = "img/$arr[0].$arr[1]";
             if(move_uploaded_file($image["tmp_name"], "$tmp" )){
                 if($this->ProductModel->insertProductModel($tmp,$name,$price,$price2,$description) ){
-                    if(move_uploaded_file($image["tmp_name"], "$tmp" )){
-                        $mode = "Thêm thành công";
-                    }
+                    $mode = "Thêm thành công";
                 }
             }else{
                 $mode = "Thêm thất bại";
