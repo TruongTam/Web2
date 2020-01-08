@@ -1160,3 +1160,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     overflow: hidden;
     text-overflow: ellipsis;  
 }
+.modal-body
+{
+    position: relative;
+    top: 40px;
+    left: 100px;
+    right: 100px;
+}
