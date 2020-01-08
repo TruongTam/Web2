@@ -1,19 +1,19 @@
 <?php 
 
 class App{
-    protected $controller="index2";
-    protected $action="Show";
+    protected $controller="dangky";
+    protected $action="dangky";
     protected $params=[];
     function __construct(){
  
         $arr = $this->UrlProcess();
  
         // Controller
-        if( file_exists("./".$arr[0].".php") ){
+        if( file_exists("./MVC/Controllers/".$arr[0].".php") ){
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        require_once "./". $this->controller.".php";
+        require_once "./MVC/Controllers/". $this->controller.".php";
         $this->controller = new $this->controller;
         // Action
         if(isset($arr[1])){
