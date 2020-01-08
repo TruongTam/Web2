@@ -21,6 +21,17 @@
             }
             return json_encode($mang);
         }
+        public function getAllShopData($sotrang)
+        {
+            $index = ($sotrang - 1) * 12;
+            $qr = "SELECT * FROM sanpham LIMIT $index,12";
+            $rows=  mysqli_query($this->con , $qr);
+            $mang = array();
+            while($row = mysqli_fetch_array($rows)){
+                $mang[] = $row;
+            }
+            return json_encode($mang);
+        }
         public function getDataName($na){
         
             $qr = "SELECT * FROM sanpham WHERE name like '%$na%' ";

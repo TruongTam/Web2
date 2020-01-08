@@ -22,6 +22,7 @@ if (isset($_GET["name"])) {
 <html lang="en">
 
 <head>
+    <base href="/Web2/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +44,7 @@ if (isset($_GET["name"])) {
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="jquery.js"></script>
-    <script src="2.js"></script>
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,8 +65,8 @@ if (isset($_GET["name"])) {
                         <ul>
                          
                             <li><a href="#"><i class="fa fa-heart"></i> Danh sách sản phẩm</a></li>
-                            <li><a href="cart.php"><i class="fa fa-user"></i> Giỏ hàng</a></li>
-                            <li><a href="checkout.php"><i class="fa fa-user"></i> Kiểm tra</a></li>
+                            <li><a href="cart"><i class="fa fa-user"></i> Giỏ hàng</a></li>
+                            <li><a href="iCheckout"><i class="fa fa-user"></i> Kiểm tra</a></li>
                            
                         </ul>
                     </div>
@@ -103,13 +104,13 @@ if (isset($_GET["name"])) {
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="./"><img src="img/logo.jpg" width="150px"></a></h1>
+                        <h1><a href="Home"><img src="img/logo.jpg" width="150px"></a></h1>
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.php">Giỏ hàng <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"></span></a>
+                        <a href="cart">Giỏ hàng <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"></span></a>
                     </div>
                 </div>
             </div>
@@ -129,14 +130,14 @@ if (isset($_GET["name"])) {
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Trang chủ</a></li>
-                        <li class="active"><a href="shop.php?trang=1">Cửa hàng</a></li>
+                        <li><a href="Home">Trang chủ</a></li>
+                        <li class="active"><a href="shop">Cửa hàng</a></li>
                        
-                        <li><a href="cart.php">Giỏ hàng</a></li>
+                        <li><a href="cart">Giỏ hàng</a></li>
                        
                     
                      
-                        <li><a href="contact.php">Liên hệ</a></li>
+                        <li><a href="contact">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -154,78 +155,9 @@ if (isset($_GET["name"])) {
             </div>
         </div>
     </div>
+    <?php require_once "pages/".$data["page"].".php"?>   
 
 
-    <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row coc">
-
-                <?php
-                $index = ($trang - 1) * $productrang;
-                $sqlSelect = "SELECT * FROM sanpham WHERE name LIKE '%$name%' LIMIT $index ,$productrang";
-                $result = mysqli_query($conn, $sqlSelect);
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-
-
-                        //echo $row['description'];
-
-                        ?>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="single-shop-product">
-                                <div class="product-upper">
-                                    <img class="size" src=<?php echo $row['image'] ?> alt="">
-                                </div>
-                                <h2><a href="single-product.php?id=<?php echo $row['id'] ?>"><?php echo $row['name'] ?></a></h2>
-                                <div class="product-carousel-price">
-                                    <ins><?php echo number_format($row['price'])?> VND</ins> <del>$<?php echo number_format($row['price2'])?> VND</del>
-                                </div>
-
-                                <div class="product-option-shop">
-                                    <a data-item='<?php echo json_encode($row)?>' class="add_to_cart_button" data-quantity="1" data-product_sku="" rel="nofollow" href="shop.php" >Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                <?php }
-                }
-                ?>
-
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-pagination text-center">
-                        <nav>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <?php
-                                $coc = mysqli_query($conn, "SELECT * FROM sanpham");
-                                $tongproduct = mysqli_num_rows($coc);
-                                $sotrang = ceil($tongproduct / $productrang);
-                                for ($i = 1; $i <= $sotrang; ++$i) {
-
-                                ?>
-                                    <li><a href="shop.php?trang=<?php echo $i?>&name=<?php echo $name?>"><?php echo $i ?></a></li>
-                                <?php } ?>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <div class="footer-top-area">
