@@ -66,7 +66,7 @@
                     <?php echo $row->{"price2"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
-                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>.jpg">
+                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>">
                     </td> 
                     <td class="project-state text-left overflowhide">
                      <?php echo $row->{"description"} ?></td>
