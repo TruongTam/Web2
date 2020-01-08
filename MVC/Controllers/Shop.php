@@ -12,7 +12,7 @@ class Shop extends Controller{
         }
         $this->view("ShopTemplate", [
             "page"=>"shop",
-            "data"=> json_decode($this->ProductModel->getAllShopData($pages)),
+            "data"=> json_decode($this->ProductModel->getAllData($pages)),
             "pages"=>$pages,
             
         ]);
