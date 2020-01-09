@@ -1,17 +1,4 @@
-<?php
-include("./connect.php");
-$productrang = 12;
-if (isset($_GET["trang"])) {
-    $trang = $_GET["trang"];
-} else {
-    $trang = 1;
-}
-if (isset($_GET["name"])) {
-    $name = $_GET["name"];
-} else {
-    $name = "";
-}
-?>
+
 <script src="2.js"></script>
 <div class="single-product-area">
         <div class="zigzag-bottom"></div>
@@ -19,7 +6,7 @@ if (isset($_GET["name"])) {
             <div class="row coc">
 
                 <?php
-                $index = ($trang - 1) * $productrang;
+            
                 
                 $result = $data["data"];
                 foreach($result as $row)

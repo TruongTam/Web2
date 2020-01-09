@@ -20,19 +20,8 @@
       <!-- Default box -->
       <div class="card card-solid">
         <div class="card-body">
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-              <div class="col-12">
-              <base href="/">
-                <img src="../../dist/img/prod-1.jpg" class="product-image" alt="Product Image">
-              <base href="/web2/">
-              </div>
-              <div class="col-12 product-image-thumbs">
-                
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
+         
+            <div class="formcenter" >
               
             <form role="form" action="./AccountAdmin/addAccount" method = "post" enctype="multipart/form-data"> 
               <div class="card-body">

@@ -22,7 +22,7 @@
         public function dangky($taikhoan,$matkhau,$ten,$sdt,$ngaysinh,$diachi,$email ,$quyen=false)
         {
             if($quyen){
-                $sql = "INSERT INTO account (taikhoan,password,QUYEN,ten,sdt,ngaysinh,diachi,email) VALUES ('$taikhoan','$matkhau',1,'$ten','$sdt','$ngaysinh','$diachi','$email')";
+                $sql = "INSERT INTO account (taikhoan,password,QUYEN,ten,sdt,ngaysinh,diachi,email) VALUES ('$taikhoan','$matkhau',$quyen,'$ten','$sdt','$ngaysinh','$diachi','$email')";
             }else{
                 $sql = "INSERT INTO account (taikhoan,password,QUYEN,ten,sdt,ngaysinh,diachi,email) VALUES ('$taikhoan','$matkhau',0,'$ten','$sdt','$ngaysinh','$diachi','$email')";
             }

@@ -11,8 +11,7 @@ class Contact extends Controller{
         $this->view("ShopTemplate", [
             "page"=>"contact",
             "data"=> json_decode($this->ProductModel->getAllData()),
-            
-            
+
         ]);
       
     }
