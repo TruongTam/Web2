@@ -30,7 +30,18 @@
         }
         public function dangnhap($taikhoan,$matkhau)
         {
-            $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+            $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau' AND QUYEN=0" ;
+            $result =mysqli_query($this->con,$sql );
+            if(mysqli_num_rows($result)>0)
+            {
+                return true;
+            }
+            else return false;
+              
+        }
+        public function dangnhap1($taikhoan,$matkhau)
+        {
+            $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau' AND QUYEN=1" ;
             $result =mysqli_query($this->con,$sql );
             if(mysqli_num_rows($result)>0)
             {

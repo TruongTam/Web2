@@ -28,10 +28,16 @@ class dangKy extends Controller{
                 
                 if( $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi,$email)){
                     echo " đăng ký thành công";
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                     
                     $_POST['taikhoan1']=null;
                 }else{
                     echo " đăng ký thất bại";
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                 }
               
             }    
@@ -49,13 +55,34 @@ class dangKy extends Controller{
                 
                 if($coc->dangnhap( $taikhoan,md5($matkhau,false)))
                 {
-                    echo "Đăng nhập thành công";
+                    if(isset($_POST['taikhoan']))
+                    {
+                        $_SESSION["taikhoan"]=$_POST['taikhoan'];
+                        
+                    }
                     $_POST['taikhoan']=null;
                     $this->view("HomeTemplate",[
                         "page"=>"home"
                     ]);
+                    //dang nhap roi
+                   
                 }
-                else echo "Tài khoản hoặc mật khẩu không đúng";
+                else
+                {
+                    if($coc->dangnhap1( $taikhoan,md5($matkhau,false)))
+                    {
+                        header('Location: http://localhost:8080/Web2/ProductAdmin');
+                    }
+                    else
+                    {
+                        echo "Nhập sai";
+                        $this->view("HomeTemplate",[
+                            "page"=>"home"
+                        ]);
+                    }
+                    
+                }
+                
                 
             }
         }
@@ -73,9 +100,16 @@ class dangKy extends Controller{
                 if($coc->capnhatmatkhau($taikhoan,md5($matkhau,false),md5($matkhaunew,false)))
                 {
                     echo "Đã cập nhật thành công";
+
                     $_POST['taikhoan2']=null;
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                 }
                 else echo "Thất bại";
+                $this->view("HomeTemplate",[
+                    "page"=>"home"
+                ]);
                 
                 
             }
@@ -99,9 +133,24 @@ class dangKy extends Controller{
                     $_POST['taikhoan3']=null;
                 }
                 else echo "thất bại";
+                $this->view("HomeTemplate",[
+                    "page"=>"home"
+                ]);
                
                 
             }
+        }
+    }
+    function dangxuat()
+    {
+        if(isset($_POST['nutdangxuat']))
+        {
+            
+            unset($_SESSION["taikhoan"]);
+            $this->view("HomeTemplate",[
+                "page"=>"home"
+            ]);
+
         }
     }
        

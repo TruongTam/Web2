@@ -49,6 +49,7 @@ include("./connect.php");
   </head>
   
   <body>
+  
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -96,7 +97,14 @@ include("./connect.php");
       </div>
     </div>
   </div>
-
+  <?php 
+    if(isset($_SESSION['taikhoan']))
+    {
+        echo 'Chào bạn: '. $_SESSION['taikhoan'] ;
+    }
+    
+?>
+  
   
   
   
@@ -260,7 +268,7 @@ include("./connect.php");
     </div>
   </div>
 
-  
+
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -357,12 +365,15 @@ include("./connect.php");
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                     
+                        <form action="./dangky/dangxuat" method="POST">
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
-                            
+                        
+                        <input type="submit" value="Đăng xuất" name="nutdangxuat">
+                        </form> 
+                           
                         </ul>
                     </div>
                 </div>

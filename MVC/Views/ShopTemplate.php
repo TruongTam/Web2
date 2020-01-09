@@ -58,7 +58,6 @@ if (isset($_GET["name"])) {
 
 
 
-
 <body>
 
   <!-- Modal -->
@@ -108,6 +107,13 @@ if (isset($_GET["name"])) {
     </div>
   </div>
 
+  <?php 
+    if(isset($_SESSION['taikhoan']))
+    {
+        echo 'Chào bạn: '. $_SESSION['taikhoan'] ;
+    }
+    
+?>
   
   
   
@@ -366,11 +372,14 @@ if (isset($_GET["name"])) {
                         <ul>
                         
                          
+                        <form action="./dangky/dangxuat" method="POST">
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
-                           
+                        
+                        <input type="submit" value="Đăng xuất" name="nutdangxuat">
+                        </form> 
                         </ul>
                     </div>
                 </div>
