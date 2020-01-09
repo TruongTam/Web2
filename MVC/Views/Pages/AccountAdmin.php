@@ -142,6 +142,6 @@
     </section>
     <!-- /.content -->
   </div>
-  <script src="./plugins/jquery/jquery.min.js"></script>
+  
   <script src="./js/Account.js"></script>
   </script>

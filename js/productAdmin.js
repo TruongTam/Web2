@@ -21,11 +21,9 @@ $(document).ready(function(){
       })
 
 
-  
     $("#ipSearch").keyup(function(){
-
        if($(this).val()==""){
-        $("#modesearch").html("")
+           $("#modesearch").html("")
            window.location.reload();
            return;
        }else{
@@ -39,7 +37,7 @@ $(document).ready(function(){
             name: $(this).val()
         },
         success: function(data) {
-          
+            
             let list = JSON.parse(data);
             $("table.table-striped.projects #tbodysp").html("");
             list.forEach(function(value){

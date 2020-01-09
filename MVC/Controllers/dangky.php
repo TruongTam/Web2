@@ -1,6 +1,6 @@
 <?php
 
-class dangKy extends Controller{
+class dangky extends Controller{
 
     function Show(){
        
@@ -9,7 +9,7 @@ class dangKy extends Controller{
   
         ]);
     }
-    function dangKy(){
+    function resi(){
 
         $coc = $this->model("AccountModel"); // sử dụng hàm
         if(isset($_POST['nutdangky1'])) // lấy dữ liệu từ view
@@ -49,13 +49,30 @@ class dangKy extends Controller{
                 
                 if($coc->dangnhap( $taikhoan,md5($matkhau,false)))
                 {
-                    echo "Đăng nhập thành công";
+                    if(isset($_POST['taikhoan']))
+                    {
+                        $_SESSION["taikhoan"]=$_POST['taikhoan'];
+                    }
                     $_POST['taikhoan']=null;
                     $this->view("HomeTemplate",[
                         "page"=>"home"
                     ]);
+                    //dang nhap roi
+                   
                 }
-                else echo "Tài khoản hoặc mật khẩu không đúng";
+                else
+                {
+                    if($coc->dangnhap1( $taikhoan,md5($matkhau,false)))
+                    {
+                        header('Location: http://localhost:8080/Web2/ProductAdmin');
+                    }
+                    else
+                    {
+                        echo "Nhập sai";
+                    }
+                    
+                }
+                
                 
             }
         }

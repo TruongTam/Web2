@@ -113,7 +113,7 @@ include("./connect.php");
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="./dangky/dangKy" method="POST" style="text-align: center">
+        <form action="./dangky/resi" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản*:</td>

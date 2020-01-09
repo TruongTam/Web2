@@ -24,8 +24,6 @@
             if(!$pages){
                 $pages = 1;
             }
-           
-            
             $this->view("Admin", [
                 "page"=>"AccountAdmin",
                 "data"=> json_decode($this->AccountModel->getAllData($pages,0)),
@@ -38,6 +36,33 @@
             }else{
                 $result = "Xóa thất bại";
             }
+        }
+        function addAccount(){
+            $result ="";
+            $quyen=0;
+            if(isset($_POST['submit'])){
+                $name =$_POST['name'];
+                $user =$_POST["user"];
+                $password =$_POST["password"];
+                $sdt =$_POST["sdt"];
+                $email =$_POST["email"];
+                $ngaysinh =$_POST["ngaysinh"];
+                $diachi =$_POST["diachi"];
+                $quyen =$_POST["quyen"];
+                echo $quyen;
+
+                if( $this->AccountModel->dangky($user,md5($password,false), $name, $sdt, $ngaysinh,$diachi,$email ,$quyen)){
+                    $result =" Đăng ký thành công";
+                }else{
+                    $result = " Đăng ký thất bại";
+                }
+            }
+            $this->view("Admin", [
+                "page"=>"addAccount",
+                "result"=>$result,
+            ]);
+            
+        
         }
 
 

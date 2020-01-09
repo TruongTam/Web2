@@ -14,16 +14,10 @@
         }
         function searchNameAccount(){
             $a = $_POST["name"];
-            echo $this->AccountModel->getDataName($a);
+            echo "kjfhdj";
         }
           
-
     }
  
-
-
-
-
-
 
 ?>

@@ -28,7 +28,7 @@ $(document).ready(function(){
        $.ajax({
         url: "./Ajax/searchNameAccount",
         method: "post",
-        
+      
         data: {
             name: $(this).val()
         },
@@ -39,8 +39,7 @@ $(document).ready(function(){
             $("table.table-striped.projects #tbodysp").html("");
             list.forEach(function(value){
                 $("table.table-striped.projects #tbodysp").append(`
-          
-             
+
                 <tr>
                 <td style="width: 1%">
                 ${value.id}
