@@ -97,6 +97,16 @@
             return json_encode($mang);
     
         }
+        public function getId($na){
+        
+            $qr = "SELECT id FROM account WHERE taikhoan = '$na' ";
+            
+            $result = mysqli_fetch_array( mysqli_query($this->con, $qr));
+            
+            return $result;
+            
+    
+        }
 
     }
 ?>

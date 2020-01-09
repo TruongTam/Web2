@@ -13,7 +13,14 @@ class GetBill extends  Controller
       
         if(isset($_POST['GetPay'])) // lấy dữ liệu từ view
         {
-            $MaKH ="4401104149";
+            if(isset($_SESSION["id"]))
+            {
+                $MaKH=$_SESSION["id"];
+            }
+            else
+            {
+                $MaKH ="";
+            }
            
             $Tong = (int)$_POST["getTotal"];
             date_default_timezone_set('Asia/Ho_Chi_Minh');

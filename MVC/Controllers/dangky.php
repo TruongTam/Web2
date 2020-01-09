@@ -41,6 +41,7 @@ class dangky extends Controller{
         $coc = $this->model("AccountModel"); 
         if(isset($_POST['nutdangnhap1']))
         {
+            $idBill=$coc->getId($_POST['taikhoan']);
             $taikhoan =$_POST['taikhoan'];
             $matkhau =$_POST['matkhau'];
             if($taikhoan!=null) // tránh load lại trang
@@ -52,7 +53,9 @@ class dangky extends Controller{
                     if(isset($_POST['taikhoan']))
                     {
                         $_SESSION["taikhoan"]=$_POST['taikhoan'];
+                        $_SESSION["id"]=$idBill[0];
                     }
+                    
                     $_POST['taikhoan']=null;
                     $this->view("HomeTemplate",[
                         "page"=>"home"
