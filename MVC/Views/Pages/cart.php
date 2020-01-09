@@ -50,6 +50,9 @@ if (isset($_GET['id'])) {
   </head>
   
   <body>
+
+
+
   
 
 
@@ -57,16 +60,7 @@ if (isset($_GET['id'])) {
 
 
 
-
-
-
-
-
-
-
-
-
-
+  
   <!-- shop -->
     <div class="header-area">
         <div class="container">

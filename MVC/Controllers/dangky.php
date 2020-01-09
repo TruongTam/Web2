@@ -1,16 +1,17 @@
 <?php
-
 class dangky extends  Controller
 {
+
     function Show()
     {
         $coc = $this->model("AccountModel"); // sử dụng hàm
-        $this->view("ShopTemplate",[
-            "page"=>"shop"
-        ]);
+        
+        $this->view("CartTemplate",
+    [
+        "page"=>"cart"
+    ]);
         if(isset($_POST['nutdangky1'])) // lấy dữ liệu từ view
         {
-            
             $taikhoan =$_POST['taikhoan1'];
             $matkhau =$_POST['matkhau1'];
             $ten =$_POST['ten'];
@@ -20,8 +21,7 @@ class dangky extends  Controller
             
             if($taikhoan!=null)
             {
-                $coc->dangky($taikhoan,$matkhau, $ten, $sdt, $ngaysinh,$diachi);
-                
+                $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi);
                 // insert đoạn đã má hóa vào database
                 $_POST['taikhoan1']=null;
                 echo " đăng ký thành công";
@@ -34,7 +34,8 @@ class dangky extends  Controller
             if($taikhoan!=null) // tránh load lại trang
             {
                 //mã hóa input xong r bỏ vô hàm đăng nhập cho nó xét vs database
-                $coc->dangnhap( $taikhoan,$matkhau);
+                $coc->dangnhap( $taikhoan,md5($matkhau,false));
+                
                 $_POST['taikhoan']=null;
             }
         }
@@ -45,14 +46,13 @@ class dangky extends  Controller
             $matkhaunew=$_POST['matkhaunew'];
             if($taikhoan!=null)
             {
-                $coc->capnhatmatkhau($taikhoan,$matkhau,$matkhaunew);
+                $coc->capnhatmatkhau($taikhoan,md5($matkhau,false),md5($matkhaunew,false));
                 $_POST['taikhoan2']=null;
-                echo "maxba1";
+                echo "Đã cập nhật thành công";
             }
         }
         
     }
 }
     
-
 ?>
