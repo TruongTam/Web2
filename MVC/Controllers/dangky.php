@@ -9,7 +9,7 @@ class dangKy extends Controller{
   
         ]);
     }
-    function dangKy(){
+    function resi(){
 
         $coc = $this->model("AccountModel"); // sử dụng hàm
         if(isset($_POST['nutdangky1'])) // lấy dữ liệu từ view
@@ -143,16 +143,13 @@ class dangKy extends Controller{
     }
     function dangxuat()
     {
-        if(isset($_POST['nutdangxuat']))
-        {
-            
+        
             unset($_SESSION["taikhoan"]);
             $this->view("HomeTemplate",[
                 "page"=>"home"
             ]);
 
-        }
-    }
+           }
        
     
 }

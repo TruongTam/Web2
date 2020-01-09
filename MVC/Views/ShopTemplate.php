@@ -130,7 +130,7 @@ if (isset($_GET["name"])) {
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="./dangky/dangKy" method="POST" style="text-align: center">
+        <form action="./dangky/resi" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản*:</td>
@@ -372,14 +372,14 @@ if (isset($_GET["name"])) {
                         <ul>
                         
                          
-                        <form action="./dangky/dangxuat" method="POST">
+                        
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
+                        <li><a href="./dangky/dangxuat" ><i class="fa fa-user"></i> Đăng Xuất</a></li>
                         
-                        <input type="submit" value="Đăng xuất" name="nutdangxuat">
-                        </form> 
+                        
                         </ul>
                     </div>
                 </div>
