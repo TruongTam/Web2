@@ -25,21 +25,22 @@
               
             <form role="form" action="./AccountAdmin/updateAccount" method = "post" enctype="multipart/form-data"> 
               <div class="card-body">
+
+
+
                     <div class="form-group">
-                    <label for="exampleInputEmail1">Tên</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên " value="<?php echo $data['data']->ten?>"  >
+                      <label for="exampleInputPassword1">Tên tài khoản</label>
+                      <input type="text" class="form-control" name = "user"  placeholder="Nhập tên tài khoản" value="<?php echo $data['data']->taikhoan?>" >
                     </div>
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Tên tài khoản</label>
-                    <input type="text" class="form-control" name = "user"  placeholder="Nhập tên tài khoản" value="<?php echo $data['data']->taikhoan?>" >
+                      <label for="exampleInputEmail1">Tên</label>
+                      <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên " value="<?php echo $data['data']->ten?>"  >
                     </div>
+                   
+                
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="password"  placeholder="Nhập password" value="<?php echo $data['data']->password?>" >
-                    </div>
-                    <div class="form-group">
-                    <label for="exampleInputPassword1">Số điện thoại</label>
-                    <input type="text" class="form-control" name="sdt"  placeholder="Nhập số điện thoại"value="<?php echo $data['data']->sdt?>" >
+                      <label for="exampleInputPassword1">Số điện thoại</label>
+                      <input type="text" class="form-control" name="sdt"  placeholder="Nhập số điện thoại"value="<?php echo $data['data']->sdt?>" >
                     </div>
                     <div class="form-group">
                     <label for="exampleInputPassword1">Email </label>
