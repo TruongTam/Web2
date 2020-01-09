@@ -6,9 +6,9 @@
             if(!$pages){
                 $qr = "SELECT * FROM sanpham ";
             }else{
-                $pages = ($pages-1)*10 ;
+                $pages = ($pages-1)*12 ;
                 if(!$soluong){
-                    $soluong=10;
+                    $soluong=12;
                 }
                 $qr = "SELECT * FROM sanpham LIMIT $pages,$soluong";
             }

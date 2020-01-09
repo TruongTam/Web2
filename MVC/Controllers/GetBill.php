@@ -1,24 +1,3 @@
-<?php
-
-class iCheckout extends Controller{
-    public $ProductModel;
-    
-    function __construct(){
-        $this->ProductModel = $this->model("ProductModel");
-    }
-    function Show(){
-       
-        $this->view("ShopTemplate", [
-            "page"=>"checkout",
-            "data"=> json_decode($this->ProductModel->getAllData()),
-            
-            
-        ]);
-     
-    }
-    
-}
-?>
 
 <?php
 class GetBill extends  Controller
@@ -37,7 +16,8 @@ class GetBill extends  Controller
             $MaKH ="4401104149";
            
             $Tong = (int)$_POST["getTotal"];
-            $date = date('m/d/Y h:i:s a', time());
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $date = date('m/d/Y');
            
             
             if($coc->InsertBill($MaKH,$Tong,$date)) {

@@ -69,8 +69,16 @@ function updateTotal()
         
     }
     document.getElementsByClassName('Orderamount')[0].innerText =  LastTotal+ " vnd";
+   
     document.getElementsByClassName('Totalamount')[0].innerText = sessionStorage.getItem("total") + " vnd";
+    document.getElementsByClassName('Totalamountt')[0].value=JSON.parse (sessionStorage.getItem("total"));
+    document.getElementsByClassName('getJSONN')[0].value=(sessionStorage.getItem("name"));
+    document.getElementsByClassName('Totalamountt')[0].innerText = "";
+    var a=  document.getElementsByClassName('Totalamountt')[0].value;
+    console.log(a);
+  
 }
+
 
 
 

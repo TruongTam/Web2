@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="./dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="./plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <script src="./jquery.js"></script>
+  
   <link rel="stylesheet" href="./style.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
