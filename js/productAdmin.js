@@ -2,33 +2,24 @@ $(document).ready(function(){
  
 
   
-    $('#btnDelete').click(function(){
-        
-        
-        console.log("a");
-      
-    })
+    $(".btnDelete").click(function(e){
+        e.preventDefault();
+        let tmp = $(this).attr("data-item");
+        console.log(tmp);
+        $("#btnSave").attr("data-item",tmp);
+        $("#modal-default").modal();
+  
+      })
+                  
+      $('#btnSave').click(function(e){
+          console.log($(this).attr("data-item"));
+          $.post(`./ProductAdmin/deleteProduct/`, {id:$(this).attr("data-item")}, function(){
+              
+              window.location.reload();
+              
+          }) 
+      })
 
-      bsCustomFileInput.init(function() {
-     
-          var preview = document.querySelector('.product-image');
-          var file    = document.querySelector('#exampleInputFile').files[0];
-          var reader  = new FileReader();
-    
-          reader.onloadend = function () {
-            preview.src = reader.result;
-          }
-    
-          if (file) {
-            reader.readAsDataURL(file);
-          } else {
-            preview.src = "";
-          }
-    
-          console.log($("#exampleInputFile").val());
-      });
-    
-    
 
   
     $("#ipSearch").keyup(function(){
@@ -43,7 +34,7 @@ $(document).ready(function(){
        $.ajax({
         url: "./Ajax/searchName",
         method: "post",
-
+       
         data: {
             name: $(this).val()
         },
@@ -78,19 +69,16 @@ $(document).ready(function(){
                     text-overflow: ellipsis;  
                     "> ${value.description}</td>
                        
-                    </td>
+                 
                     <td class="project-actions text-right"style="width: 15% ">
-                        <a class="btn btn-primary btn-sm" href="./AdminController/Show/coc">
-                            <i class="fas fa-folder">
-                            </i>
-                            <span>View</span>
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
+                       
+                       <a class="btn btn-info btn-sm" href="./ProductAdmin/updateProduct/ ${value.id}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             <span>Edit</span>
                         </a>
-                        <a class="btnDelete" href="#", data-item = "<?php echo $row ->{"id"}?>">
+                        
+                        <a class="btnDelete" href="#", data-item = " ${value.id}">
                             <i class="fas fa-trash">
                             </i>
                             Delete

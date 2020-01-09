@@ -53,22 +53,23 @@
                         STT
                     </th>
                     <th style="width: 20%">
-                       Tên sản phẩm
+                        Tài khoản
                     </th>
                     <th style="width: 10%" class="text-center">
-                       Tiền chưa giảm giá 
+                        Tên 
                     </th>
                     <th style="width: 10%" class="text-center">
-                        Tiền đã giảm giá
+                        Ngày sinh 
                     </th>
                     <th style="width: 10%" class="text-center">
-                        Hình ảnh 
+                        Địa chỉ 
                     </th>
                     <th style="width:24%" class="text-center">
-                        Mô tả
+                        Email
                     </th>
+                    
                     <th style="width: 15% " class="text-right">
-                      Action
+                        Action
                     </th>
                 </tr>
             </thead>
@@ -81,20 +82,20 @@
                     <?php echo $row->{"id"} ?>
                     </td>
                     <td style="width: 20%" class="overflowhide" >
-                        <?php echo $row->{"name"} ?>
+                        <?php echo $row->{"taikhoan"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
-                      <?php echo $row->{"price"} ?>
+                      <?php echo $row->{"ten"} ?>
                     </td> 
                     <td style="width: 10%"class="text-center">
-                    <?php echo $row->{"price2"} ?>
+                    <?php echo $row->{"ngaysinh"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
-                      <img alt="Avatar" class="table-avatar" src="./<?php echo $row->{"image"}?>">
+                    <?php echo $row->{"diachi"} ?>
                     </td> 
                     <td class="project-state text-left overflowhide">
-                     <?php echo $row->{"description"} ?></td>
-                       
+                     <?php echo $row->{"email"} ?>
+                    
                     </td>
                     <td class="project-actions text-right"style="width: 15% ">
                        
@@ -118,14 +119,14 @@
                     <nav style="display: flex;justify-content: center">
                         <ul class="pagination">
                             <li style="padding-right:7px">
-                                <a href="./ProductAdmin/Show/<?php echo $data["pages"]-1?>" aria-label="Previous">
+                                <a href="./AccountAdmin/Show/<?php echo $data["pages"]-1?>" aria-label="Previous">
                                     <span aria-hidden="true"><<</span>
                                 </a>
                             </li>
                                 <li><a href=""> </a><?php echo $data["pages"]?></li>
                             <li style="padding-left:7px">
-                                <a href="./ProductAdmin/Show/<?php echo $data["pages"]+1?>" aria-label="Next">
-                                    <span aria-hidden="true">  >></span>
+                                <a href="./AccountAdmin/Show/<?php echo $data["pages"]+1?>" aria-label="Next">
+                                    <span aria-hidden="true">  >> </span>
                                 </a>
                             </li>
                         </ul>
@@ -141,8 +142,6 @@
     </section>
     <!-- /.content -->
   </div>
-  <script src="./js/productAdmin.js"></script>
-
-  
-  
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <script src="./js/Account.js"></script>
   </script>

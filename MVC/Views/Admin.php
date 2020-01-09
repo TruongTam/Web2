@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="">
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-
+ <
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="./plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -102,7 +102,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.html" class="nav-link active">
+                <a href="./ProductAdmin" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sản phẩm</p>
                 </a>
@@ -126,19 +126,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="./AccountAdmin" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admin</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="./AccountAdmin/showUser" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Khách hàng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm tài khoản</p>
                 </a>
@@ -180,7 +180,7 @@
 
 
 <!-- AdminLTE App -->
-
+ 
 <!-- AdminLTE for demo purposes -->
 
     <?php require_once "pages/".$data["page"].".php"  ?>
@@ -203,7 +203,7 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="./js/productAdmin.js"></script>
+<script src="./js/Admin.js"></script>
 <script src="./plugins/bs-custom-file-input/bs-custom-file-input.js"></script>
 <script src="./plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

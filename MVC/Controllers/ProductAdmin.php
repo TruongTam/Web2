@@ -123,11 +123,7 @@ class ProductAdmin extends Controller{
         }else{
             $result = "Xóa thất bại";
         }
-        $this->view("Admin", [
-            "page"=>"updateProduct",
-            "result"=>$result,
-            "data"=>json_decode($this->ProductModel->getDataId($_POST["id"]))
-        ]);
+      
     }
     
    
