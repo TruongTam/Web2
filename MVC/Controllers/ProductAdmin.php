@@ -117,8 +117,8 @@ class ProductAdmin extends Controller{
         ]);
 
     }
-    function deleteProduct($id){
-        if($this->ProductModel->deleteProductModel($id)){
+    function deleteProduct(){
+        if($this->ProductModel->deleteProductModel($_POST["id"])){
             $result = "Xóa thành công";
         }else{
             $result = "Xóa thất bại";
@@ -126,7 +126,7 @@ class ProductAdmin extends Controller{
         $this->view("Admin", [
             "page"=>"updateProduct",
             "result"=>$result,
-            "data"=>json_decode($this->ProductModel->getDataId($id))
+            "data"=>json_decode($this->ProductModel->getDataId($_POST["id"]))
         ]);
     }
     

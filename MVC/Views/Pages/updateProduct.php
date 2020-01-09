@@ -1,4 +1,6 @@
 <div class="content-wrapper">
+ 
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -24,7 +26,7 @@
             <div class="col-12 col-sm-6">
               <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
               <div class="col-12">
-                <img src="../../dist/img/prod-1.jpg" class="product-image" alt="Product Image">
+                <img src="<?php echo $data['data']->image?>" class="product-image" alt="Product Image">
               </div>
               <div class="col-12 product-image-thumbs">
                 
@@ -95,13 +97,3 @@
       <!-- /.card -->
 
     </section>
-    <script type="text/javascript">
-
-$(document).ready(function () {
-
-
-  bsCustomFileInput.init(function() {
-      
-  });
-});
-</script>

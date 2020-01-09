@@ -25,12 +25,24 @@
   <script src="./jquery.js"></script>
   <link rel="stylesheet" href="./style.css">
   <!-- Daterange picker -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="./plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  
   
   <!-- summernote -->
   <link rel="stylesheet" href="./plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <script src= "./js/productAdmin.js"></script>
+  
   <script src="jquery.js"></script>
 </head>
 
@@ -108,7 +120,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Tài khoản
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -116,19 +128,19 @@
               <li class="nav-item">
                 <a href="pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Admin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/tables/data.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Khách hàng</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/tables/jsgrid.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Thêm tài khoản</p>
                 </a>
               </li>
             </ul>
@@ -160,16 +172,16 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
 
 <!-- Bootstrap 4 -->
-<script src="./plugins/bs-custom-file-input/bs-custom-file-input.js"></script>
 
-<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
 <!-- AdminLTE App -->
-<script src="./dist/js/adminlte.min.js"></script>
+
 <!-- AdminLTE for demo purposes -->
-<script src="./dist/js/demo.js"></script>
 
     <?php require_once "pages/".$data["page"].".php"  ?>
 
@@ -191,6 +203,21 @@
 </div>
 <!-- ./wrapper -->
 
+<script src="./js/productAdmin.js"></script>
+<script src="./plugins/bs-custom-file-input/bs-custom-file-input.js"></script>
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="./plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="./plugins/toastr/toastr.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./dist/js/demo.js"></script>
+
 
 </body>
 </html>
+

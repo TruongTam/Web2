@@ -1,4 +1,28 @@
+
+
 <div class="content-wrapper">
+  <div class="modal fade" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Default Modal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="btnSave" data-item = "">Save changes</button>
+          </div>
+      </div>  
+          <!-- /.modal-content -->
+    </div>
+        <!-- /.modal-dialog -->
+  </div>
+                
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -79,10 +103,11 @@
                             </i>
                             <span>Edit</span>
                         </a>
-                        <a class="btn btn-danger btn-sm" href="./ProductAdmin/deleteProduct/<?php echo $row->{"id"}?>">
+                        <a class="btnDelete" href="#", data-item = "<?php echo $row ->{"id"}?>">
                             <i class="fas fa-trash">
                             </i>
-                            <span>Delete</span>
+                            Delete
+                          
                         </a>
                     </td>
                 </tr>
@@ -116,3 +141,28 @@
     </section>
     <!-- /.content -->
   </div>
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <script>
+  
+  
+    $(".btnDelete").click(function(e){
+      e.preventDefault();
+      let tmp = $(this).attr("data-item");
+      console.log(tmp);
+      $("#btnSave").attr("data-item",tmp);
+      $("#modal-default").modal();
+
+    })
+                
+    $('#btnSave').click(function(e){
+        console.log($(this).attr("data-item"));
+        $.post(`./ProductAdmin/deleteProduct/`, {id:$(this).attr("data-item")}, function(){
+            
+            window.location.reload();
+            
+        }) 
+    })
+
+  
+  
+  </script>

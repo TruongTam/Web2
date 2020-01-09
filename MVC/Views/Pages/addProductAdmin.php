@@ -24,7 +24,9 @@
             <div class="col-12 col-sm-6">
               <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
               <div class="col-12">
+              <base href="/">
                 <img src="../../dist/img/prod-1.jpg" class="product-image" alt="Product Image">
+              <base href="/web2/">
               </div>
               <div class="col-12 product-image-thumbs">
                 
@@ -95,13 +97,3 @@
       <!-- /.card -->
 
     </section>
-    <script type="text/javascript">
-
-$(document).ready(function () {
-
-
-  bsCustomFileInput.init(function() {
-      
-  });
-});
-</script>
