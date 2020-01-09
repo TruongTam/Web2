@@ -1,15 +1,17 @@
 <?php
-class dangky extends  Controller
-{
 
-    function Show()
-    {
+class dangKy extends Controller{
+
+    function Show(){
+       
+        $this->view("CartTemplate", [
+            "page"=>"cart",
+  
+        ]);
+    }
+    function dangKy(){
+
         $coc = $this->model("AccountModel"); // sử dụng hàm
-        
-        $this->view("CartTemplate",
-    [
-        "page"=>"cart"
-    ]);
         if(isset($_POST['nutdangky1'])) // lấy dữ liệu từ view
         {
             $taikhoan =$_POST['taikhoan1'];
@@ -18,15 +20,25 @@ class dangky extends  Controller
             $sdt = $_POST['sdt'];
             $ngaysinh=$_POST['ngaysinh'];
             $diachi = $_POST['diachi'];
+            $email = $_POST['email'];
             
             if($taikhoan!=null)
             {
-                $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi);
                 // insert đoạn đã má hóa vào database
-                $_POST['taikhoan1']=null;
-                echo " đăng ký thành công";
+                
+                if( $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi,$email)){
+                    echo " đăng ký thành công";
+                    
+                    $_POST['taikhoan1']=null;
+                }else{
+                    echo " đăng ký thất bại";
+                }
+              
             }    
         }
+    }
+    function dangNhap(){
+        $coc = $this->model("AccountModel"); 
         if(isset($_POST['nutdangnhap1']))
         {
             $taikhoan =$_POST['taikhoan'];
@@ -34,11 +46,23 @@ class dangky extends  Controller
             if($taikhoan!=null) // tránh load lại trang
             {
                 //mã hóa input xong r bỏ vô hàm đăng nhập cho nó xét vs database
-                $coc->dangnhap( $taikhoan,md5($matkhau,false));
                 
-                $_POST['taikhoan']=null;
+                if($coc->dangnhap( $taikhoan,md5($matkhau,false)))
+                {
+                    echo "Đăng nhập thành công";
+                    $_POST['taikhoan']=null;
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
+                }
+                else echo "Tài khoản hoặc mật khẩu không đúng";
+                
             }
         }
+    }
+       
+    function updatePassword(){
+        $coc = $this->model("AccountModel"); 
         if(isset($_POST['nutsua1']))
         {
             $taikhoan =$_POST['taikhoan2'];
@@ -46,13 +70,41 @@ class dangky extends  Controller
             $matkhaunew=$_POST['matkhaunew'];
             if($taikhoan!=null)
             {
-                $coc->capnhatmatkhau($taikhoan,md5($matkhau,false),md5($matkhaunew,false));
-                $_POST['taikhoan2']=null;
-                echo "Đã cập nhật thành công";
+                if($coc->capnhatmatkhau($taikhoan,md5($matkhau,false),md5($matkhaunew,false)))
+                {
+                    echo "Đã cập nhật thành công";
+                    $_POST['taikhoan2']=null;
+                }
+                else echo "Thất bại";
+                
+                
             }
         }
-        
     }
-}
+    function updateInfo(){
+        $coc = $this->model("AccountModel"); 
+        if(isset($_POST['nutsua2']))
+        {
+            $taikhoan =$_POST['taikhoan3'];
+            $matkhau =$_POST['matkhau3'];
+            $ten =$_POST['tenmoi'];
+            $sdt = $_POST['sdtmoi'];
+            $ngaysinh=$_POST['ngaysinhmoi'];
+            $diachi = $_POST['diachimoi'];
+            if($taikhoan!=null)
+            {
+                if($coc->capnhathoso($taikhoan,md5($matkhau,false),$ten, $sdt,$ngaysinh, $diachi))
+                {
+                    echo "Đã cập nhật thành công";
+                    $_POST['taikhoan3']=null;
+                }
+                else echo "thất bại";
+               
+                
+            }
+        }
+    }
+       
     
+}
 ?>

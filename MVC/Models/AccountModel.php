@@ -39,26 +39,45 @@
         public function dangnhap($taikhoan,$matkhau)
         {
             $sql = "SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau'";
-            
-            if(mysqli_num_rows(mysqli_query($this->con,$sql ))>0)
+            $result =mysqli_query($this->con,$sql );
+            if(mysqli_num_rows($result)>0)
             {
-                echo "Chào mừng bạn + $taikhoan";
+                return true;
             }
-            else
-            {
-                echo"ngu";
-            }       
+            else return false;
+              
         }
         public function capnhatmatkhau($taikhoan,$matkhau,$matkhaunew)
         {
-            $sql = "UPDATE account SET password='$matkhaunew' WHERE taikhoan='$taikhoan'AND password='$matkhau'";
-            mysqli_query($this->con,$sql );
+            $sql1="SELECT*FROM account WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+            $result1 =mysqli_query($this->con,$sql1 );
+            if(mysqli_num_rows($result1)>0)
+            {
+                $sql = "UPDATE account SET password='$matkhaunew' WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+                $result =mysqli_query($this->con,$sql );
+                if($result)
+            {
+                return true;
+            }
+            else return false;
+                
+            }
+            else return false;
+           
+            
         }
         public function capnhathoso($taikhoan,$matkhau,$tenmoi,$sdtmoi,$ngaysinhmoi,$diachimoi)
         {
             $sql="UPDATE account SET ten='$tenmoi',sdt='$sdtmoi',ngaysinh='$ngaysinhmoi',diachi='$diachimoi' WHERE taikhoan='$taikhoan'AND password='$matkhau'"; 
-            mysqli_query($this->con,$sql );
+            $result =mysqli_query($this->con,$sql );
+            if($result)
+            {
+                return true;
+            }
+            else return false;
+            
         }
+        
 
         public function getDataName($na){
         
