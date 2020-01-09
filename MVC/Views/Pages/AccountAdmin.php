@@ -99,7 +99,7 @@
                     </td>
                     <td class="project-actions text-right"style="width: 15% ">
                        
-                        <a class="btn btn-info btn-sm" href="./ProductAdmin/updateProduct/<?php echo $row->{"id"}?>">
+                        <a class="btn btn-info btn-sm" href="./AccountAdmin/updateAccount/<?php echo $row->{"id"}?>">
                             <i class="fas fa-pencil-alt">
                             </i>
                             <span>Edit</span>

@@ -88,7 +88,7 @@
         }
         public function getDataName($na){
         
-            $qr = "SELECT * FROM account WHERE name like '%$na%' ";
+            $qr = "SELECT * FROM account WHERE ten like '%$na%' ";
             $rows=  mysqli_query($this->con , $qr);
             $mang = array();
             while($row = mysqli_fetch_array($rows)){
@@ -97,6 +97,36 @@
             return json_encode($mang);
     
         }
+        public function updateAccount2($taikhoan,$tenmoi,$sdtmoi,$ngaysinhmoi,$diachimoi,$email,$quyen)
+        {
+            $sql="UPDATE account SET ten='$tenmoi',sdt='$sdtmoi',ngaysinh='$ngaysinhmoi',diachi='$diachimoi',email='$email',QUYEN='$quyen' WHERE taikhoan='$taikhoan'"; 
+            $result =mysqli_query($this->con,$sql );
+            if($result)
+            {
+                return true;
+            }
+            else return false;
+            
+        }
+        public function getDataId($id){
+        
+            $qr = "SELECT * FROM `account` WHERE id = '$id' ";
+            $result=  mysqli_query($this->con , $qr);
+            $data= mysqli_fetch_array($result);
+            return json_encode($data);
+    
+        }
+        function deleteAccount($id){
+            $qr = "DELETE FROM `account` WHERE  id = '$id' ";
+            $result=  mysqli_query($this->con , $qr);
+            if($result){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        
 
     }
 ?>

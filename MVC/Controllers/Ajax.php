@@ -14,7 +14,7 @@
         }
         function searchNameAccount(){
             $a = $_POST["name"];
-            echo "kjfhdj";
+            echo $this->AccountModel->getDataName($a);
         }
           
     }
