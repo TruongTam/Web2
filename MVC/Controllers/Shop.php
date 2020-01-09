@@ -16,6 +16,8 @@ class Shop extends Controller{
             "pages"=>$pages,
             
         ]);
+        $data=json_decode($this->ProductModel->getAllData($pages));
+        var_dump($data);
     }
 }
 ?>

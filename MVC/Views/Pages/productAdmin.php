@@ -116,3 +116,4 @@
     </section>
     <!-- /.content -->
   </div>
+  <script src= "./js/productAdmin.js"></script>

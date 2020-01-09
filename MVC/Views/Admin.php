@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="./dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="./plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <script src="./jquery.js"></script>
+  
   <link rel="stylesheet" href="./style.css">
   <!-- Daterange picker -->
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="./plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <script src= "./js/productAdmin.js"></script>
-  <script src="jquery.js"></script>
+  
+ 
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

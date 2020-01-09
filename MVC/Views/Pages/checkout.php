@@ -774,46 +774,52 @@ include("./connect.php");
                                                 </td>
                                             </tr>
 
+                                     
+                                                <tr class="order-total">
+                                                    <th>Đơn giá cuối</th>
+                                                    <td> <strong><span name="getTotal"  class="Totalamount"></strong>  </td>
+                                                </tr>
 
-                                            <tr class="order-total">
-                                                <th>Đơn giá cuối</th>
-                                                <td><strong><span class="amount Totalamount">0 VND</span></strong> </td>
-                                            </tr>
-
-                                        </tfoot>
-                                    </table>
+                                            </tfoot>
+                                        </table>
 
 
-                                    <div id="payment">
-                                        <ul class="payment_methods methods">
-                                            <li class="payment_method_bacs">
-                                                <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
-                                                <label for="payment_method_bacs">Chuyển khoảng trực tiếp</label>
-                                                <div class="payment_box payment_method_bacs">
-                                                    <p>Chuyển khoảng trực tiếp. Hãy sử dụng thẻ ngân hàng của bạn . Đơn hàng của bạn sẽ không được giao nếu chúng tôi chưa nhận được chuyển kho.</p>
-                                                </div>
-                                            </li>
-                                            <li class="payment_method_cheque">
-                                                <input type="radio" data-order_button_text="" value="cheque" name="payment_method" class="input-radio" id="payment_method_cheque">
-                                                <label for="payment_method_cheque">Thanh toán séc </label>
-                                                <div style="display:none;" class="payment_box payment_method_cheque">
-                                                    <p>Hãy gửi séc của bạn tới chi nhánh công ty để đặt hàng</p>
-                                                </div>
-                                            </li>
-                                            <li class="payment_method_paypal">
-                                                <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
-                                                <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
-                                                </label>
-                                                <div style="display:none;" class="payment_box payment_method_paypal">
-                                                    <p>Thanh toán qua PayPal;Bạn cũng có thể thanh toán bằng thẻ credit nếu bạn không có PayPal.</p>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                         <div id="payment">
+                                            <ul class="payment_methods methods">
+                                                <li class="payment_method_bacs">
+                                                    <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
+                                                    <label for="payment_method_bacs">Chuyển khoảng trực tiếp</label>
+                                                    <div class="payment_box payment_method_bacs">
+                                                        <p>Chuyển khoảng trực tiếp. Hãy sử dụng thẻ ngân hàng của bạn . Đơn hàng của bạn sẽ không được giao nếu chúng tôi chưa nhận được chuyển kho.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="payment_method_cheque">
+                                                    <input type="radio" data-order_button_text="" value="cheque" name="payment_method" class="input-radio" id="payment_method_cheque">
+                                                    <label for="payment_method_cheque">Thanh toán séc </label>
+                                                    <div style="display:none;" class="payment_box payment_method_cheque">
+                                                        <p>Hãy gửi séc của bạn tới chi nhánh công ty để đặt hàng</p>
+                                                    </div>
+                                                </li>
+                                                <li class="payment_method_paypal">
+                                                    <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
+                                                    <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
+                                                    </label>
+                                                    <div style="display:none;" class="payment_box payment_method_paypal">
+                                                        <p>Thanh toán qua PayPal;Bạn cũng có thể thanh toán bằng thẻ credit nếu bạn không có PayPal.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
 
-                                        <div class="form-row place-order">
-
-                                            <input type="submit"  data-value="Place order" value="Thanh toán" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
-
+                                            <div class="form-row place-order">
+                                        <form action="./GetBill" method="Post"> 
+                                              
+          
+                                                <strong ><input type="hidden" name="getTotal" value="" class="Totalamountt"></strong>   
+                                                <strong ><input type="hidden" name="getJSON" value="" class="getJSONN"></strong>
+                                                </br>        
+                                                <input type="submit"  data-value="Place order" value="Thanh toán" id="place_order" name="GetPay" class="button alt">
+                                            
+                                        </form>
 
                                         </div>
 

@@ -1,18 +1,4 @@
-<?php
-include("./connect.php");
-$productrang = 12;
-if (isset($_GET["trang"])) {
-    $trang = $_GET["trang"];
-} else {
-    $trang = 1;
-}
-if (isset($_GET["name"])) {
-    $name = $_GET["name"];
-} else {
-    $name = "";
-}
 
-?>
 <!DOCTYPE html>
 <!--
     ustora by freshdesignweb.com
