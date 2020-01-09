@@ -89,6 +89,20 @@
             else {
                 return false;
             }
+            else
+            {
+                echo"ngu";
+            }       
+        }
+        public function capnhatmatkhau($taikhoan,$matkhau,$matkhaunew)
+        {
+            $sql = "UPDATE account SET password='$matkhaunew' WHERE taikhoan='$taikhoan'AND password='$matkhau'";
+            mysqli_query($this->con,$sql );
+        }
+        public function capnhathoso($taikhoan,$matkhau,$tenmoi,$sdtmoi,$ngaysinhmoi,$diachimoi)
+        {
+            $sql="UPDATE account SET ten='$tenmoi',sdt='$sdtmoi',ngaysinh='$ngaysinhmoi',diachi='$diachimoi' WHERE taikhoan='$taikhoan'AND password='$matkhau'"; 
+            mysqli_query($this->con,$sql );
         }
 
         
