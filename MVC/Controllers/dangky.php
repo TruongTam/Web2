@@ -64,8 +64,7 @@ class dangKy extends Controller{
                     $this->view("HomeTemplate",[
                         "page"=>"home"
                     ]);
-                    //dang nhap roi
-                   
+                    //dang nhap roi            
                 }
                 else
                 {
@@ -125,9 +124,10 @@ class dangKy extends Controller{
             $sdt = $_POST['sdtmoi'];
             $ngaysinh=$_POST['ngaysinhmoi'];
             $diachi = $_POST['diachimoi'];
+            $email= $_POST['emailmoi'];
             if($taikhoan!=null)
             {
-                if($coc->capnhathoso($taikhoan,md5($matkhau,false),$ten, $sdt,$ngaysinh, $diachi))
+                if($coc->capnhathoso($taikhoan,md5($matkhau,false),$ten, $sdt,$ngaysinh, $diachi, $email))
                 {
                     echo "Đã cập nhật thành công";
                     $_POST['taikhoan3']=null;
@@ -143,13 +143,12 @@ class dangKy extends Controller{
     }
     function dangxuat()
     {
-        
             unset($_SESSION["taikhoan"]);
             $this->view("HomeTemplate",[
                 "page"=>"home"
             ]);
 
-           }
+    }
        
     
 }

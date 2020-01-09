@@ -343,6 +343,16 @@ include("./connect.php");
                     
                     </tr>
                     <tr>
+                        <td>Email mới:</td>
+                        <td><input type="text" name="emailmoi"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                          &nbsp;
+                      </td>
+                    
+                    </tr>
+                    <tr>
                         <td></td>
                         <td><input type="submit" value="Cập nhật" name="nutsua2"></td>
                     </tr>
