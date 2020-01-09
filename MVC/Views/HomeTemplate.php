@@ -39,13 +39,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <base href="/Web2/">
   <body>
 
 
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-    Đăng nhập
-  </button>
+  
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -60,7 +59,7 @@
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="" method="POST" style="text-align: center">
+        <form action="./dangky/dangNhap" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản:</td>
@@ -95,9 +94,7 @@
   </div>
 
   
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong1">
-    Đăng ký
-  </button>
+ 
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTittle1" aria-hidden="true">
@@ -112,7 +109,7 @@
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="" method="POST" style="text-align: center">
+        <form action="./dangky/dangKy" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản*:</td>
@@ -169,6 +166,16 @@
                         <td>Địa chỉ:</td>
                         <td><input type="text" name="diachi"></td>
                     </tr>
+                    <tr>
+                      <td>
+                          &nbsp;
+                      </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
 
                     <tr>
                       <td>  &nbsp;</td>
@@ -190,9 +197,6 @@
 
 
   
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
-    Cập nhật
-  </button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle2" aria-hidden="true">
@@ -207,7 +211,7 @@
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="" method="POST" style="text-align: center">
+        <form action="./dangky/updatePassword" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản:</td>
@@ -254,9 +258,7 @@
 
 
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong3">
-    Chỉnh sửa hồ sơ
-  </button>
+  
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -271,7 +273,7 @@
         <div class="modal-body">
         <div class="dangkytaikhoan">
         
-        <form action="" method="POST" style="text-align: center">
+        <form action="./dangky/updateInfo" method="POST" style="text-align: center">
             <table>
                     <tr>
                         <td>Tài khoản:</td>
@@ -352,9 +354,11 @@
                     <div class="user-menu">
                         <ul>
                           
-                         
-                            <li><a href="cart"><i class="fa fa-user"></i>Giỏ hàng</a></li>
-                            <li><a href="iCheckout"><i class="fa fa-user"></i> Kiểm tra</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
+                            
                            
                         </ul>
                     </div>

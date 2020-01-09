@@ -47,6 +47,7 @@ if (isset($_GET['id'])) {
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="1.js"></script>
+    <base href="/Web2/">
   </head>
   
   <body>
