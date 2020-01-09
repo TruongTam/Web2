@@ -28,6 +28,7 @@ class dangKy extends Controller{
                 
                 if( $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi,$email)){
                     echo " đăng ký thành công";
+                    
                     $_POST['taikhoan1']=null;
                 }else{
                     echo " đăng ký thất bại";
@@ -50,6 +51,9 @@ class dangKy extends Controller{
                 {
                     echo "Đăng nhập thành công";
                     $_POST['taikhoan']=null;
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                 }
                 else echo "Tài khoản hoặc mật khẩu không đúng";
                 
