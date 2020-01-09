@@ -5,12 +5,14 @@ class dangky extends  Controller
     function Show()
     {
         $coc = $this->model("AccountModel"); // sử dụng hàm
-        $this->view("cart"); // require_once
+        $this->view("ShopTemplate",[
+            "page"=>"shop"
+        ]);
         if(isset($_POST['nutdangky1'])) // lấy dữ liệu từ view
         {
+            
             $taikhoan =$_POST['taikhoan1'];
             $matkhau =$_POST['matkhau1'];
-            
             $ten =$_POST['ten'];
             $sdt = $_POST['sdt'];
             $ngaysinh=$_POST['ngaysinh'];
@@ -18,7 +20,8 @@ class dangky extends  Controller
             
             if($taikhoan!=null)
             {
-                $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi);
+                $coc->dangky($taikhoan,$matkhau, $ten, $sdt, $ngaysinh,$diachi);
+                
                 // insert đoạn đã má hóa vào database
                 $_POST['taikhoan1']=null;
                 echo " đăng ký thành công";
@@ -31,8 +34,7 @@ class dangky extends  Controller
             if($taikhoan!=null) // tránh load lại trang
             {
                 //mã hóa input xong r bỏ vô hàm đăng nhập cho nó xét vs database
-                $coc->dangnhap( $taikhoan,md5($matkhau,false));
-                
+                $coc->dangnhap( $taikhoan,$matkhau);
                 $_POST['taikhoan']=null;
             }
         }
