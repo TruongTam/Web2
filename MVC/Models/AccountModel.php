@@ -75,9 +75,9 @@
            
             
         }
-        public function capnhathoso($taikhoan,$matkhau,$tenmoi,$sdtmoi,$ngaysinhmoi,$diachimoi)
+        public function capnhathoso($taikhoan,$matkhau,$tenmoi,$sdtmoi,$ngaysinhmoi,$diachimoi,$email)
         {
-            $sql="UPDATE account SET ten='$tenmoi',sdt='$sdtmoi',ngaysinh='$ngaysinhmoi',diachi='$diachimoi' WHERE taikhoan='$taikhoan'AND password='$matkhau'"; 
+            $sql="UPDATE account SET ten='$tenmoi',sdt='$sdtmoi',ngaysinh='$ngaysinhmoi',diachi='$diachimoi',email=' $email' WHERE taikhoan='$taikhoan'AND password='$matkhau'"; 
             $result =mysqli_query($this->con,$sql );
             if($result)
             {

@@ -28,10 +28,16 @@ class dangky extends Controller{
                 
                 if( $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi,$email)){
                     echo " đăng ký thành công";
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                     
                     $_POST['taikhoan1']=null;
                 }else{
                     echo " đăng ký thất bại";
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                 }
               
             }    
@@ -53,13 +59,19 @@ class dangky extends Controller{
                     if(isset($_POST['taikhoan']))
                     {
                         $_SESSION["taikhoan"]=$_POST['taikhoan'];
+<<<<<<< HEAD
                         $_SESSION["id"]=$idBill[0];
                     }
                     
+=======
+                        
+                    }
+>>>>>>> f2e91cc53829ab67184485826717f3cdca0b25c7
                     $_POST['taikhoan']=null;
                     $this->view("HomeTemplate",[
                         "page"=>"home"
                     ]);
+<<<<<<< HEAD
                     //dang nhap roi
                    
                 }
@@ -75,6 +87,25 @@ class dangky extends Controller{
                     }
                     
                 }
+=======
+                    //dang nhap roi            
+                }
+                else
+                {
+                    if($coc->dangnhap1( $taikhoan,md5($matkhau,false)))
+                    {
+                        header('Location: http://localhost:8080/Web2/ProductAdmin');
+                    }
+                    else
+                    {
+                        echo "Nhập sai";
+                        $this->view("HomeTemplate",[
+                            "page"=>"home"
+                        ]);
+                    }
+                    
+                }
+>>>>>>> f2e91cc53829ab67184485826717f3cdca0b25c7
                 
                 
             }
@@ -93,9 +124,16 @@ class dangky extends Controller{
                 if($coc->capnhatmatkhau($taikhoan,md5($matkhau,false),md5($matkhaunew,false)))
                 {
                     echo "Đã cập nhật thành công";
+
                     $_POST['taikhoan2']=null;
+                    $this->view("HomeTemplate",[
+                        "page"=>"home"
+                    ]);
                 }
                 else echo "Thất bại";
+                $this->view("HomeTemplate",[
+                    "page"=>"home"
+                ]);
                 
                 
             }
@@ -111,18 +149,30 @@ class dangky extends Controller{
             $sdt = $_POST['sdtmoi'];
             $ngaysinh=$_POST['ngaysinhmoi'];
             $diachi = $_POST['diachimoi'];
+            $email= $_POST['emailmoi'];
             if($taikhoan!=null)
             {
-                if($coc->capnhathoso($taikhoan,md5($matkhau,false),$ten, $sdt,$ngaysinh, $diachi))
+                if($coc->capnhathoso($taikhoan,md5($matkhau,false),$ten, $sdt,$ngaysinh, $diachi, $email))
                 {
                     echo "Đã cập nhật thành công";
                     $_POST['taikhoan3']=null;
                 }
                 else echo "thất bại";
+                $this->view("HomeTemplate",[
+                    "page"=>"home"
+                ]);
                
                 
             }
         }
+    }
+    function dangxuat()
+    {
+            unset($_SESSION["taikhoan"]);
+            $this->view("HomeTemplate",[
+                "page"=>"home"
+            ]);
+
     }
        
     
