@@ -25,7 +25,7 @@ class dangky extends Controller{
             if($taikhoan!=null)
             {
                 // insert đoạn đã má hóa vào database
-                
+                    
                 if( $coc->dangky($taikhoan,md5($matkhau,false), $ten, $sdt, $ngaysinh,$diachi,$email)){
                     echo " đăng ký thành công";
                     $this->view("HomeTemplate",[

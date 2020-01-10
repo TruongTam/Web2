@@ -5,8 +5,9 @@ $(document).ready(function(){
         console.log(tmp);
         $("#btnSave").attr("data-item",tmp);
         $("#modal-default").modal();
-  
+        console.log(tmp);
       })
+
                   
       $('#btnSave').click(function(e){
           console.log($(this).attr("data-item"));
@@ -17,7 +18,7 @@ $(document).ready(function(){
           }) 
       })
     $("#ipSearch").keyup(function(){
-        console.log("fd");
+        console.log($(this).val());
        if($(this).val()==""){
         $("#modesearch").html("")
            window.location.reload();
@@ -28,7 +29,7 @@ $(document).ready(function(){
        $.ajax({
         url: "./Ajax/searchNameAccount",
         method: "post",
-      
+       
         data: {
             name: $(this).val()
         },

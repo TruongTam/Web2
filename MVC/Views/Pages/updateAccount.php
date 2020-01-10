@@ -25,39 +25,40 @@
               
             <form role="form" action="./AccountAdmin/updateAccount" method = "post" enctype="multipart/form-data"> 
               <div class="card-body">
+
+
+
                     <div class="form-group">
-                    <label for="exampleInputEmail1">Tên</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên ">
+                      <label for="exampleInputPassword1">Tên tài khoản</label>
+                      <input type="text" class="form-control" name = "user"  placeholder="Nhập tên tài khoản" value="<?php echo $data['data']->taikhoan?>" >
                     </div>
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Tên tài khoản</label>
-                    <input type="text" class="form-control" name = "user"  placeholder="Nhập tên tài khoản">
+                      <label for="exampleInputEmail1">Tên</label>
+                      <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Nhập tên " value="<?php echo $data['data']->ten?>"  >
                     </div>
+                   
+                
                     <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="password"  placeholder="Nhập password">
-                    </div>
-                    <div class="form-group">
-                    <label for="exampleInputPassword1">Số điện thoại</label>
-                    <input type="text" class="form-control" name="sdt"  placeholder="Nhập số điện thoại">
+                      <label for="exampleInputPassword1">Số điện thoại</label>
+                      <input type="text" class="form-control" name="sdt"  placeholder="Nhập số điện thoại"value="<?php echo $data['data']->sdt?>" >
                     </div>
                     <div class="form-group">
                     <label for="exampleInputPassword1">Email </label>
-                    <input type="text" class="form-control" name="email"  placeholder="Nhập email">
+                    <input type="text" class="form-control" name="email"  placeholder="Nhập email"value="<?php echo $data['data']->email?>" >
                     </div>
                     <div class="form-group">
                     <label for="exampleInputPassword1">Ngày sinh</label>
-                    <input type="date" class="form-control" name="ngaysinh"  placeholder="Nhập ngày sinh ">
+                    <input type="date" class="form-control" name="ngaysinh"  placeholder="Nhập ngày sinh "value="<?php echo $data['data']->ngaysinh?>" >
                     </div>
                     <div class="form-group">
                     <label for="exampleInputPassword1">Địa chỉ</label>
-                    <input type="text" class="form-control" name="diachi"  placeholder="Nhập địa chỉ">
+                    <input type="text" class="form-control" name="diachi"  placeholder="Nhập địa chỉ"value="<?php echo $data['data']->ten?>" >
                     </div>
                     <div class="form-group">
                          <label for="exampleInputPassword1"><span>Quyền</label>
-                        <select name ="quyen"class="form-control"  >
+                        <select name ="quyen"class="form-control" value ='0' >
                             <option value="1">Admin</option>
-                            <option value="0">User</option>
+                            <option value="0" selected ="selected">User</option>
                         </select>
                     </div>
 

@@ -53,21 +53,14 @@
                         STT
                     </th>
                     <th style="width: 20%">
-                        Tài khoản
+                        Người mua
                     </th>
                     <th style="width: 10%" class="text-center">
-                        Tên 
+                        Ngày đặt
                     </th>
                     <th style="width: 10%" class="text-center">
-                        Ngày sinh 
+                        Tổng tiền 
                     </th>
-                    <th style="width: 10%" class="text-center">
-                        Địa chỉ 
-                    </th>
-                    <th style="width:24%" class="text-center">
-                        Email
-                    </th>
-                    
                     <th style="width: 15% " class="text-right">
                         Action
                     </th>
@@ -82,28 +75,22 @@
                     <?php echo $row->{"id"} ?>
                     </td>
                     <td style="width: 20%" class="overflowhide" >
-                        <?php echo $row->{"taikhoan"} ?>
+                        <?php echo $row->{"teb"} ?>
                     </td>
                     <td style="width: 10%" class="text-center">
-                      <?php echo $row->{"ten"} ?>
+                      <?php echo $row->{"ngaylapbill"} ?>
                     </td> 
                     <td style="width: 10%"class="text-center">
-                    <?php echo $row->{"ngaysinh"} ?>
-                    </td>
-                    <td style="width: 10%" class="text-center">
-                    <?php echo $row->{"diachi"} ?>
-                    </td> 
-                    <td class="project-state text-left overflowhide">
-                     <?php echo $row->{"email"} ?>
+                    <?php echo $row->{"tongtien"} ?>
                     
-                    </td>
+                    
                     <td class="project-actions text-right"style="width: 15% ">
                        
-                        <a class="btn btn-info btn-sm" href="./AccountAdmin/updateAccount/<?php echo $row->{"id"}?>">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            <span>Edit</span>
-                        </a>
+                        <a class="btn btn-primary btn-sm" href="#">
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                          </a>
                         <a class="btnDelete" href="#", data-item = "<?php echo $row ->{"id"}?>">
                             <i class="fas fa-trash">
                             </i>

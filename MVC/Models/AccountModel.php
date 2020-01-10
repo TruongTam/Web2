@@ -88,7 +88,7 @@
         }
         public function getDataName($na){
         
-            $qr = "SELECT * FROM account WHERE name like '%$na%' ";
+            $qr = "SELECT * FROM account WHERE ten like '%$na%' ";
             $rows=  mysqli_query($this->con , $qr);
             $mang = array();
             while($row = mysqli_fetch_array($rows)){
