@@ -4,7 +4,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
 ?>
-<script src="3.js"></script>
+<script src="./js/singleProductt.js"></script>
                 <?php
                 $id = $data["id"];
                 $single = mysqli_query($conn, "SELECT * FROM sanpham WHERE id=$id");

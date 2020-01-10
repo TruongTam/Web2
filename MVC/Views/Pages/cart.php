@@ -1,6 +1,6 @@
 
 
-<script src="1.js"></script>
+<script src="./js/cart.js"></script>
             <div class="col-md-8">
 
 
@@ -52,7 +52,7 @@
                                         while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                     <li class="product">
-                                        <a href="single-product.php?id=<?php echo $row['id']?> " data-item = '<?php echo json_encode($row)?>'>
+                                        <a href="SingleProduct/Show/<?php echo $row['id']?>" data-item = '<?php echo json_encode($row)?>'>
                                             <img  width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="<?php echo $row['image']?>">
                                             <h3>Gửi ý tưởng của bạn</h3>
                                             <span class="price"><span class="amount"><?php echo number_format($row['price'])?> VND</span></span>

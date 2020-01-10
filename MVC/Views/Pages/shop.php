@@ -1,5 +1,5 @@
 
-<script src="2.js"></script>
+<script src="./js/shop.js"></script>
 <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">

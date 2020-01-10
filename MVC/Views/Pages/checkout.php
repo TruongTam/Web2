@@ -2,7 +2,7 @@
 include("./connect.php");
 ?>
 
-    <script src="checkout.js"></script>
+    <script src="./js/checkout.js"></script>
     
     
     
