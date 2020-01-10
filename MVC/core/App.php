@@ -1,6 +1,6 @@
 <?php
 class App{
-    protected $controller="Cart";
+    protected $controller="Home";
     protected $action="Show";
     protected $params=[];
     function __construct(){

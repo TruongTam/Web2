@@ -48,6 +48,7 @@ class dangky extends Controller{
         if(isset($_POST['nutdangnhap1']))
         {
             $idBill=$coc->getId($_POST['taikhoan']);
+            $idQuyen=$coc->getQuyen($_POST['taikhoan']);
             $taikhoan =$_POST['taikhoan'];
             $matkhau =$_POST['matkhau'];
             if($taikhoan!=null) // tránh load lại trang
@@ -59,19 +60,15 @@ class dangky extends Controller{
                     if(isset($_POST['taikhoan']))
                     {
                         $_SESSION["taikhoan"]=$_POST['taikhoan'];
-<<<<<<< HEAD
                         $_SESSION["id"]=$idBill[0];
-                    }
-                    
-=======
+                        $_SESSION["Quyen"]=$idQuyen[0];
                         
                     }
->>>>>>> f2e91cc53829ab67184485826717f3cdca0b25c7
+                    var_dump($_SESSION["Quyen"]);
                     $_POST['taikhoan']=null;
                     $this->view("HomeTemplate",[
                         "page"=>"home"
                     ]);
-<<<<<<< HEAD
                     //dang nhap roi
                    
                 }
@@ -79,33 +76,23 @@ class dangky extends Controller{
                 {
                     if($coc->dangnhap1( $taikhoan,md5($matkhau,false)))
                     {
-                        header('Location: http://localhost:8080/Web2/ProductAdmin');
-                    }
-                    else
-                    {
-                        echo "Nhập sai";
-                    }
-                    
-                }
-=======
-                    //dang nhap roi            
-                }
-                else
-                {
-                    if($coc->dangnhap1( $taikhoan,md5($matkhau,false)))
-                    {
-                        header('Location: http://localhost:8080/Web2/ProductAdmin');
-                    }
-                    else
-                    {
-                        echo "Nhập sai";
-                        $this->view("HomeTemplate",[
+                        if(isset($_POST['taikhoan']))
+                        {
+                            $_SESSION["taikhoan"]=$_POST['taikhoan'];
+                            $_SESSION["id"]=$idBill[0];
+                            $_SESSION["Quyen"]=$idQuyen[0];
+                            
+                        }
+                        $this->view("HomeTemplate" ,[
                             "page"=>"home"
                         ]);
                     }
+                    else
+                    {
+                        echo "Nhập sai";
+                    }
                     
                 }
->>>>>>> f2e91cc53829ab67184485826717f3cdca0b25c7
                 
                 
             }
@@ -169,6 +156,7 @@ class dangky extends Controller{
     function dangxuat()
     {
             unset($_SESSION["taikhoan"]);
+            unset($_SESSION["id"]);
             $this->view("HomeTemplate",[
                 "page"=>"home"
             ]);

@@ -107,6 +107,16 @@
             
     
         }
+        public function getQuyen($na){
+        
+            $qr = "SELECT QUYEN FROM account WHERE taikhoan = '$na' ";
+            
+            $result = mysqli_fetch_array( mysqli_query($this->con, $qr));
+            
+            return $result;
+            
+    
+        }
 
     }
 ?>

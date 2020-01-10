@@ -7,8 +7,17 @@
     
         function __construct(){
             $this->AccountModel = $this->model("AccountModel");
+            
         }
         function Show($pages = false ,$soluong = false){
+            if($_SESSION["Quyen" ]== '0')
+            {
+                $this->view("HomeTemplate",[
+                    "page"=>"home"
+                ]);
+                return;
+            }
+            
             if(!$pages){
                 $pages = 1;
             }

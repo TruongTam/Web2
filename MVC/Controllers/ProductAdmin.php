@@ -5,8 +5,20 @@ class ProductAdmin extends Controller{
     
     function __construct(){
         $this->ProductModel = $this->model("ProductModel");
+        
     }
     function Show($pages = false ,$soluong = false){
+        if(!isset($_SESSION["Quyen"]))
+        {
+           
+            return;
+        }
+        else if($_SESSION["Quyen"]=='0')
+        {
+            return;
+        }
+       
+            
         if(!$pages){
             $pages = 1;
         }

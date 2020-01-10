@@ -379,6 +379,7 @@
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
                         <li><a href="./dangky/dangxuat" ><i class="fa fa-user"></i> Đăng Xuất</a></li>
+                        <li><a href="./ProductAdmin"> <?php if($_SESSION['Quyen'])echo 'Admin'?> </a></li>
                         </ul>
                     </div>
                 </div>
