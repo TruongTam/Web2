@@ -373,18 +373,19 @@ include("./connect.php");
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="user-menu">
-                        <ul>
+                <div class="user-menu">
+                <ul>
+                          
                         
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
-                        <li><a href="./dangky/dangxuat" ><i class="fa fa-user"></i> Đăng Xuất</a></li>
-                        
-                        
-                           
-                        </ul>
+                          <li><a href="#" data-toggle="modal" data-target="#exampleModalLong1"><i class="fa fa-user"></i> Đăng ký</a></li>
+                          <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                          <li><a href="#" data-toggle="modal" data-target="#exampleModalLong2"><i class="fa fa-heart"></i> Cập nhật</a></li>
+                          <li><a href="#" data-toggle="modal" data-target="#exampleModalLong3"><i class="fa fa-heart"></i> Chỉnh sửa hồ sơ</a></li>
+                          <li><a href="./dangky/dangxuat" ><i class="fa fa-user"></i> Đăng Xuất</a></li>
+                          
+                          
+                             
+                          </ul>
                     </div>
                 </div>
                 
